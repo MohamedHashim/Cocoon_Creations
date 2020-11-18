@@ -13,12 +13,12 @@ class TopStoriesViewModel constructor(
     private val topStoriesRepository: TopStoriesRepository
 ) : LiveCoroutinesViewModel() {
 
-    val storyListLiveData: LiveData<List<Story>>
-    val toastLiveData: MutableLiveData<String> = MutableLiveData()
+    var topStoriesListLiveData: LiveData<List<Story>>
+    var toastLiveData: MutableLiveData<String> = MutableLiveData()
 
     init {
 
-        this.storyListLiveData =
+        this.topStoriesListLiveData =
             launchOnViewModelScope {
                 this.topStoriesRepository.loadTopStories { this.toastLiveData.postValue(it) }
             }
