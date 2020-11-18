@@ -8,10 +8,10 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 class Story(
-    private val title: String,
-    private val abstract: String,
-    private val url: String,
-    private val byline: String,
-    private val published_date: String,
-    private val multimedia: List<MultiMedia>
+    val title: String,
+    val abstract: String,
+    val url: String,
+    val byline: String,
+    val published_date: String,
+    val multimedia: List<MultiMedia>
 ) : Parcelable
