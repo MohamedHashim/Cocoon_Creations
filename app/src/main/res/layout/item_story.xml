@@ -13,18 +13,62 @@
         android:id="@+id/item_story_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:layout_marginStart="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:layout_marginBottom="@dimen/margin_5">
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5"
+            android:layout_marginEnd="@dimen/margin_5"
+            app:cardCornerRadius="@dimen/corner_radius_25"
+            app:cardElevation="@dimen/elevation_5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-            <TextView
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@{story.published_date}"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_25"
+                        android:text="@{story.title}"
+                        android:textSize="@dimen/tv_size_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:text="@{story.published_date}"
+                        android:textSize="@dimen/tv_size_16" />
+
+                </LinearLayout>
+
+                <ImageView
+                    bindingPosterUrl="@{story.multimedia.get(0).url}"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_275"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:background="@drawable/photo_rounded_shape"
+                    android:contentDescription="@string/story_image"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </layout>
