@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/topStoriesFragment">
+
+    <fragment
+        android:id="@+id/topStoriesFragment"
+        android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.top_stories.TopStoriesFragment"
+        android:label="TopStoriesFragment" />
+</navigation>
