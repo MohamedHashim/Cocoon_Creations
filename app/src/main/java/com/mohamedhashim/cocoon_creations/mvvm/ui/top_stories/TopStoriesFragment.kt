@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import com.mohamedhashim.cocoon_creations.R
 import com.mohamedhashim.cocoon_creations.common_ui.adapters.TopStoriesAdapter
 import com.mohamedhashim.cocoon_creations.common_ui.extensions.showTopStories
@@ -13,6 +14,7 @@ import com.mohamedhashim.cocoon_creations.mvvm.base.DataBindingFragment
 import com.skydoves.baserecyclerviewadapter.RecyclerViewPaginator
 import kotlinx.android.synthetic.main.fragment_top_stories.*
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 /**
  * Created by Mohamed Hashim on 11/18/2020.

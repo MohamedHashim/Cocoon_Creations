@@ -35,29 +35,40 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_25"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:text="@{story.title}"
+                    android:textSize="@dimen/tv_size_16"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/margin_15"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_25"
-                        android:text="@{story.title}"
-                        android:textSize="@dimen/tv_size_16"
-                        android:textStyle="bold" />
+                    android:layout_marginTop="@dimen/margin_5">
 
                     <TextView
                         android:id="@+id/tv_rate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginStart="@dimen/margin_15"
                         android:text="@{story.published_date}"
                         android:textSize="@dimen/tv_size_16" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="@dimen/width_35"
+                        android:layout_height="@dimen/width_35"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="@string/favourite_btn"
+                        android:focusable="true"
+                        android:src="@drawable/ic_favourite"
+                        app:tint="@color/green" />
+
+                </RelativeLayout>
 
                 <ImageView
                     bindingPosterUrl="@{story.multimedia.get(0).url}"
