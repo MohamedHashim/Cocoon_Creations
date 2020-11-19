@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.mohamedhashim.cocoon_creations.R
 import com.mohamedhashim.cocoon_creations.common_ui.adapters.TopStoriesAdapter
 import com.mohamedhashim.cocoon_creations.common_ui.extensions.showTopStories
+import com.mohamedhashim.cocoon_creations.common_ui.extensions.toast
 import com.mohamedhashim.cocoon_creations.databinding.FragmentTopStoriesBinding
 import com.mohamedhashim.cocoon_creations.mvvm.base.DataBindingFragment
 import com.skydoves.baserecyclerviewadapter.RecyclerViewPaginator
@@ -41,14 +41,11 @@ class TopStoriesFragment : DataBindingFragment() {
         initializeUI()
         observeMessages()
         //TODO Check internet connection
-        //Add progress loading
+        //TODO Add progress loading
         showTopStories(recyclerView, this.viewModel, this.adapterTopStoriesList)
 
     }
 
-    fun getInit(): TopStoriesFragment? {
-        return TopStoriesFragment()
-    }
     private fun initializeUI() {
         RecyclerViewPaginator(
             recyclerView = recyclerView,
@@ -57,15 +54,7 @@ class TopStoriesFragment : DataBindingFragment() {
             onLast = { false }
         )
     }
-
-    // TODO Use dataBinding in toast
     private fun observeMessages() =
-            this.viewModel.toastLiveData.observe(viewLifecycleOwner, {
-                Toast.makeText(
-                    context,
-                    it,
-                    Toast.LENGTH_SHORT
-                ).show()
-            })
+        this.viewModel.toastLiveData.observe(viewLifecycleOwner, { context?.toast(it) })
 
 }

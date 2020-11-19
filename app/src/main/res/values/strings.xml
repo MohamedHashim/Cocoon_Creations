@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Cocoon_Creations</string>
+    <string name="top_stories">Top Stories</string>
+    <string name="bookmarks">Bookmarks</string>
 </resources>
