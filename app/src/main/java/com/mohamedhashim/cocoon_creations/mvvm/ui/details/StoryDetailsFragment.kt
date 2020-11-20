@@ -9,6 +9,7 @@ import com.mohamedhashim.cocoon_creations.common_ui.extensions.toast
 import com.mohamedhashim.cocoon_creations.databinding.FragmentStoryDetailsBinding
 import com.mohamedhashim.cocoon_creations.entity.entities.Story
 import com.mohamedhashim.cocoon_creations.mvvm.base.DataBindingFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -34,7 +35,7 @@ class StoryDetailsFragment : DataBindingFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        initToolbar(toolbar, activity as AppCompatActivity)
+        requireActivity().tabLayout.visibility = View.GONE
         viewModel.loadArguments(arguments)
         observeMessages()
     }

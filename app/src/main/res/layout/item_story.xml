@@ -13,11 +13,8 @@
         android:id="@+id/item_story_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_15"
         android:layout_marginTop="@dimen/margin_20"
-        android:layout_marginEnd="@dimen/margin_15"
         android:layout_marginBottom="@dimen/margin_5">
-
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -45,9 +42,7 @@
                     android:textSize="@dimen/tv_size_16"
                     android:textStyle="bold" />
 
-
                 <TextView
-                    android:id="@+id/tv_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_15"
@@ -58,7 +53,7 @@
                 <ImageView
                     bindingPosterUrl="@{story.multimedia.get(0).url}"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/height_275"
+                    android:layout_height="@dimen/height_200"
                     android:layout_gravity="bottom"
                     android:layout_marginTop="@dimen/margin_15"
                     android:background="@drawable/photo_rounded_shape"

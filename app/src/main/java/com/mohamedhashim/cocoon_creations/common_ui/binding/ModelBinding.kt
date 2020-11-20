@@ -1,8 +1,11 @@
 package com.mohamedhashim.cocoon_creations.common_ui.binding
 
+import android.annotation.SuppressLint
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.mohamedhashim.cocoon_creations.R
 import com.mohamedhashim.cocoon_creations.entity.entities.Story
 import com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsViewModel
@@ -37,4 +40,10 @@ fun clickListener(imageView: ImageView, story: Story, viewModel: StoryDetailsVie
         bindFavourite(imageView, !story.favourite)
         viewModel.onClickedFavourite(story)
     }
+}
+
+@SuppressLint("SetTextI18n")
+@BindingAdapter("bindPublishedDate")
+fun bindPublishedDate(view: TextView, story: Story) {
+    view.text = story.published_date
 }

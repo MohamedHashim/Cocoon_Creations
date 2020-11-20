@@ -2,6 +2,7 @@ package com.mohamedhashim.cocoon_creations.entity.entities
 
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
@@ -13,8 +14,6 @@ import kotlinx.android.parcel.Parcelize
 class Story(
     @PrimaryKey
     var title: String,
-    //TODO add abstract in details screen
-//    var abstract: String,
     var url: String,
     var byline: String,
     var published_date: String,

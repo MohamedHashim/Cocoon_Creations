@@ -5,6 +5,7 @@ import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.mohamedhashim.cocoon_creations.common_ui.adapters.FavouriteStoriesAdapter
 import com.mohamedhashim.cocoon_creations.common_ui.adapters.TopStoriesAdapter
 import com.mohamedhashim.cocoon_creations.common_ui.binding.bindAdapterTopStoriesList
 import com.mohamedhashim.cocoon_creations.mvvm.ui.top_stories.TopStoriesViewModel
@@ -32,4 +33,13 @@ fun showTopStories(
         topStoriesAdapter.addTopStoriesList(it)
     }
     bindAdapterTopStoriesList(recyclerView, viewModel.topStoriesListLiveData.value)
+}
+
+fun showFavouriteStories(
+    recyclerView: RecyclerView,
+    viewModel: TopStoriesViewModel,
+    adapterStoriesList: FavouriteStoriesAdapter
+) {
+    adapterStoriesList.addStoryList(viewModel.getFavouriteStoriesList())
+    bindAdapterTopStoriesList(recyclerView, viewModel.getFavouriteStoriesList())
 }

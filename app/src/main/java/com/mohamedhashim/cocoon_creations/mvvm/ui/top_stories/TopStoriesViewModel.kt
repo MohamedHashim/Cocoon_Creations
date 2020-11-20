@@ -15,6 +15,7 @@ class TopStoriesViewModel constructor(
 ) : LiveCoroutinesViewModel() {
 
     var topStoriesListLiveData: LiveData<List<Story>>
+    val favouriteStoriesLiveData: LiveData<List<Story>>
     var toastLiveData: MutableLiveData<String> = MutableLiveData()
 
     init {
@@ -23,7 +24,11 @@ class TopStoriesViewModel constructor(
             launchOnViewModelScope {
                 this.topStoriesRepository.loadTopStories { this.toastLiveData.postValue(it) }
             }
+
+        this.favouriteStoriesLiveData = this.topStoriesRepository.getFavouriteStoriesLiveData()
     }
+
+    fun getFavouriteStoriesList() = this.topStoriesRepository.getFavouriteStoriesList()
 
     companion object {
         private const val storyKey = "story"

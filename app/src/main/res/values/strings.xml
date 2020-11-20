@@ -8,4 +8,7 @@
     <string name="removed_message">Removed from your bookmarks successfully</string>
     <string name="added_message">Added to your bookmarks successfully</string>
     <string name="story_key">story</string>
+    <string name="base_background">Story Background Image</string>
+    <string name="abstract_story">"Abstract : "</string>
+    <string name="byline">Byline :</string>
 </resources>

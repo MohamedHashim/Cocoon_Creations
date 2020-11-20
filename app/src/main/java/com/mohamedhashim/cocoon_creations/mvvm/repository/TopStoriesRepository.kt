@@ -49,6 +49,7 @@ class TopStoriesRepository constructor(
     }
 
     fun getFavouriteStoriesList() = storyDao.getFavouriteStoryList()
+    fun getFavouriteStoriesLiveData() = storyDao.getFavouriteStoryLiveData()
 
     fun realStory(oldStory: Story): Story {
         val stories = getFavouriteStoriesList()

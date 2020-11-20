@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/topStoriesFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/topStoriesFragment"
@@ -18,9 +18,21 @@
         android:id="@+id/bookmarksFragment"
         android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.bookmarks.BookmarksFragment"
         android:label="BookmarksFragment"
-        tools:layout="@layout/fragment_bookmarks" />
+        tools:layout="@layout/fragment_bookmarks" >
+        <action
+            android:id="@+id/action_bookmarksFragment_to_storyDetailsFragment"
+            app:destination="@id/storyDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/storyDetailsFragment"
         android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsFragment"
         android:label="StoryDetailsFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_topStoriesFragment2"
+            app:destination="@id/topStoriesFragment" />
+    </fragment>
 </navigation>

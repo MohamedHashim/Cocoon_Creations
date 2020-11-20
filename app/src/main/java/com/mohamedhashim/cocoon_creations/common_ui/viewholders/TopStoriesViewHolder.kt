@@ -2,6 +2,7 @@ package com.mohamedhashim.cocoon_creations.common_ui.viewholders
 
 import android.view.View
 import androidx.core.view.ViewCompat
+import com.mohamedhashim.cocoon_creations.common_ui.extensions.toast
 import com.mohamedhashim.cocoon_creations.databinding.ItemStoryBinding
 import com.mohamedhashim.cocoon_creations.entity.entities.Story
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
@@ -34,6 +35,7 @@ class TopStoriesViewHolder(
     override fun onClick(v: View?) = delegate.onItemClick(binding.itemStoryContainer, story)
 
     override fun onLongClick(v: View?): Boolean {
-        TODO("Not yet implemented")
+        v!!.context.toast(story.title)
+        return true
     }
 }

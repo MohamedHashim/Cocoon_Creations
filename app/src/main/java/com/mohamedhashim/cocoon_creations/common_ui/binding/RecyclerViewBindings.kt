@@ -2,6 +2,7 @@ package com.mohamedhashim.cocoon_creations.common_ui.binding
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.mohamedhashim.cocoon_creations.common_ui.adapters.FavouriteStoriesAdapter
 import com.mohamedhashim.cocoon_creations.common_ui.adapters.TopStoriesAdapter
 import com.mohamedhashim.cocoon_creations.entity.entities.Story
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
@@ -20,5 +21,12 @@ fun bindAdapterTopStoriesList(view: RecyclerView, topStories: List<Story>?) {
     topStories.whatIfNotNullOrEmpty {
         val adapter = view.adapter as? TopStoriesAdapter
         adapter?.addTopStoriesList(it)
+    }
+}
+@BindingAdapter("adapterFavStoriesList")
+fun bindAdapterFavStoriesList(view: RecyclerView, stories: List<Story>?) {
+    stories.whatIfNotNullOrEmpty {
+        val adapter = view.adapter as? FavouriteStoriesAdapter
+        adapter?.addStoryList(it)
     }
 }

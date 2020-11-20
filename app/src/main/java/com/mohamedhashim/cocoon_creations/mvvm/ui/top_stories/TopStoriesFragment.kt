@@ -15,6 +15,7 @@ import com.mohamedhashim.cocoon_creations.entity.entities.Story
 import com.mohamedhashim.cocoon_creations.mvvm.base.DataBindingFragment
 import com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsViewModel
 import com.skydoves.baserecyclerviewadapter.RecyclerViewPaginator
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_top_stories.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -53,6 +54,7 @@ class TopStoriesFragment : DataBindingFragment(), TopStoriesViewHolder.Delegate 
     }
 
     private fun initializeUI() {
+        requireActivity().tabLayout.visibility = View.VISIBLE
         RecyclerViewPaginator(
             recyclerView = recyclerView,
             isLoading = { false },
