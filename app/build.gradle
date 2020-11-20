@@ -18,6 +18,13 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        ndkVersion '20.1.5948944'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
 
         buildConfigField "String", "API_KEY", localProperties['API_KEY']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -29,6 +36,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -36,6 +44,7 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -90,6 +99,10 @@ dependencies {
     //navigation component
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
+
+    // room
+    implementation "androidx.room:room-runtime:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
 
     testImplementation 'junit:junit:'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

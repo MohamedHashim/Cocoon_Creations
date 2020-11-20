@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
  * Created by Mohamed Hashim on 11/18/2020.
  */
 @Parcelize
-class MultiMedia(
-    val url: String,
+data class MultiMedia(
+    var url: String,
     val caption: String
 ) : Parcelable
