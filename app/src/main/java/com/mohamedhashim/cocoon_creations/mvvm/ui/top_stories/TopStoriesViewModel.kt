@@ -1,5 +1,6 @@
 package com.mohamedhashim.cocoon_creations.mvvm.ui.top_stories
 
+import android.os.Bundle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.mohamedhashim.cocoon_creations.entity.entities.Story
@@ -22,5 +23,14 @@ class TopStoriesViewModel constructor(
             launchOnViewModelScope {
                 this.topStoriesRepository.loadTopStories { this.toastLiveData.postValue(it) }
             }
+    }
+
+    companion object {
+        private const val storyKey = "story"
+        fun createArguments(story: Story): Bundle {
+            val bundle = Bundle()
+            bundle.putParcelable(storyKey, story)
+            return bundle
+        }
     }
 }

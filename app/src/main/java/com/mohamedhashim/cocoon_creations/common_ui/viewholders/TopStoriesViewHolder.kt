@@ -9,7 +9,13 @@ import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 /**
  * Created by Mohamed Hashim on 11/19/2020.
  */
-class TopStoriesViewHolder(view: View) : BaseViewHolder(view) {
+class TopStoriesViewHolder(
+    view: View, private val delegate: Delegate
+) : BaseViewHolder(view) {
+
+    interface Delegate {
+        fun onItemClick(view: View, story: Story)
+    }
 
     private lateinit var story: Story
     private val binding by bindings<ItemStoryBinding>(view)
@@ -25,9 +31,7 @@ class TopStoriesViewHolder(view: View) : BaseViewHolder(view) {
         }
     }
 
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
-    }
+    override fun onClick(v: View?) = delegate.onItemClick(binding.itemStoryContainer, story)
 
     override fun onLongClick(v: View?): Boolean {
         TODO("Not yet implemented")

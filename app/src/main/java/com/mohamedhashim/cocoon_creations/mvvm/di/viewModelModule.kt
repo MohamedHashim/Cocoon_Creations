@@ -1,5 +1,6 @@
 package com.mohamedhashim.cocoon_creations.mvvm.di
 
+import com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsViewModel
 import com.mohamedhashim.cocoon_creations.mvvm.ui.top_stories.TopStoriesViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -9,4 +10,5 @@ import org.koin.dsl.module
  */
 val viewModelModule = module {
     viewModel { TopStoriesViewModel(get()) }
+    viewModel { StoryDetailsViewModel(get()) }
 }

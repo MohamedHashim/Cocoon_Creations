@@ -5,4 +5,7 @@
     <string name="story_image">Sotry Image</string>
     <string name="favourite_btn">favourite button</string>
     <string name="database">Stories.db</string>
+    <string name="removed_message">Removed from your bookmarks successfully</string>
+    <string name="added_message">Added to your bookmarks successfully</string>
+    <string name="story_key">story</string>
 </resources>

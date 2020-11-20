@@ -37,4 +37,28 @@ class TopStoriesRepository constructor(
         }
         liveData.apply { postValue(stories) }
     }
+
+    fun insertStory(story: Story) {
+        story.favourite = true
+        storyDao.insertFavouriteStory(story)
+    }
+
+    fun updateStory(story: Story) {
+        story.favourite = !story.favourite
+        storyDao.updateStory(story)
+    }
+
+    fun getFavouriteStoriesList() = storyDao.getFavouriteStoryList()
+
+    fun realStory(oldStory: Story): Story {
+        val stories = getFavouriteStoriesList()
+        var story = oldStory
+        for (item in stories) {
+            if (item.title == oldStory.title && item.favourite) {
+                story = item
+                break
+            }
+        }
+        return story
+    }
 }

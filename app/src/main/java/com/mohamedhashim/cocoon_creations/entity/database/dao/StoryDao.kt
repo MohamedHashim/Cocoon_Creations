@@ -1,7 +1,7 @@
 package com.mohamedhashim.cocoon_creations.entity.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.mohamedhashim.cocoon_creations.entity.entities.MultiMedia
 import com.mohamedhashim.cocoon_creations.entity.entities.Story
 
 /**
@@ -11,23 +11,20 @@ import com.mohamedhashim.cocoon_creations.entity.entities.Story
 interface StoryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertFavouriteStory(story: Story)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertStoryList(stories: List<Story>)
 
     @Query("SELECT * FROM STORY")
     fun getStoryList(): List<Story>
 
-//    @Query("SELECT * FROM STORY WHERE story_id = :id_")
-//    fun getStory(id_: Int): Story
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertFavouriteStory(story: Story)
 
     @Update
     fun updateStory(story: Story)
 
-//    @Query("SELECT * FROM Story WHERE favourite = '1'")
-//    fun getFavouriteStoryList(): List<Story>
-//
-//    @Query("SELECT * FROM  WHERE favourite = '1'")
-//    fun getFavouriteStoryLiveData(): LiveData<List<Stroy>>
+    @Query("SELECT * FROM STORY WHERE favourite = '1'")
+    fun getFavouriteStoryList(): List<Story>
+
+    @Query("SELECT * FROM STORY WHERE favourite = '1'")
+    fun getFavouriteStoryLiveData(): LiveData<List<Story>>
 }

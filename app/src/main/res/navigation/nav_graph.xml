@@ -9,10 +9,18 @@
         android:id="@+id/topStoriesFragment"
         android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.top_stories.TopStoriesFragment"
         android:label="TopStoriesFragment"
-        tools:layout="@layout/fragment_top_stories" />
+        tools:layout="@layout/fragment_top_stories" >
+        <action
+            android:id="@+id/action_topStoriesFragment_to_storyDetailsFragment"
+            app:destination="@id/storyDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bookmarksFragment"
         android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.bookmarks.BookmarksFragment"
         android:label="BookmarksFragment"
         tools:layout="@layout/fragment_bookmarks" />
+    <fragment
+        android:id="@+id/storyDetailsFragment"
+        android:name="com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsFragment"
+        android:label="StoryDetailsFragment" />
 </navigation>

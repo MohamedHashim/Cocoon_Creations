@@ -10,7 +10,9 @@ import com.skydoves.baserecyclerviewadapter.SectionRow
 /**
  * Created by Mohamed Hashim on 11/19/2020.
  */
-class TopStoriesAdapter : BaseAdapter() {
+class TopStoriesAdapter(
+    private val delegate: TopStoriesViewHolder.Delegate
+) : BaseAdapter() {
 
     init {
         addSection(ArrayList<Story>())
@@ -24,5 +26,5 @@ class TopStoriesAdapter : BaseAdapter() {
 
     override fun layout(sectionRow: SectionRow) = R.layout.item_story
 
-    override fun viewHolder(layout: Int, view: View) = TopStoriesViewHolder(view)
+    override fun viewHolder(layout: Int, view: View) = TopStoriesViewHolder(view, delegate)
 }

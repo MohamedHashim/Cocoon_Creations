@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.mohamedhashim.cocoon_creations.mvvm.ui.details.StoryDetailsViewModel" />
+
+        <variable
+            name="story"
+            type="com.mohamedhashim.cocoon_creations.entity.entities.Story" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{story.url}"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:layout_width="194dp"
+            android:layout_height="252dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/favourite_btn"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_favourite"
+            app:clickListener="@{story}"
+            app:observeFavourite="@{story.favourite}"
+            app:updateDB="@{viewModel}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
